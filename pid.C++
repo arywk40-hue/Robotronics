@@ -1,6 +1,6 @@
 // Simple Car Speed PID Controller
 double carSpeedPID(double desired_speed, double current_speed) {
-    // PID Gains (you need to tune these)
+    
     double Kp = 0.8;  // Proportional
     double Ki = 0.2;  // Integral  
     double Kd = 0.05; // Derivative
@@ -8,25 +8,25 @@ double carSpeedPID(double desired_speed, double current_speed) {
     static double prev_error = 0;
     static double total_error = 0;
     
-    // Calculate error
+   
     double error = desired_speed - current_speed;
     
-    // PID Terms
-    double P = Kp * error;                    // Current error
-    double I = Ki * total_error;              // Past errors
-    double D = Kd * (error - prev_error);     // Future error prediction
+    // PID 
+    double P = Kp * error;                    
+    double I = Ki * total_error;              
+    double D = Kd * (error - prev_error);     
     
-    // Update for next cycle
+    
     total_error += error;
     prev_error = error;
     
-    // Final control signal (throttle/brake)
+    
     return P + I + D;
 }
 
-// Usage in main loop
+
 void main() {
-    double target_speed = 5.0; // 5 km/h
+    double target_speed = 5.0; 
     
     while(true) {
        // double current_speed = readSpeedSensor(); // Get actual speed
