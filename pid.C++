@@ -1,4 +1,4 @@
-// Simple Car Speed PID Controller
+
 double carSpeedPID(double desired_speed, double current_speed) {
     
     double Kp = 0.8;  // Proportional

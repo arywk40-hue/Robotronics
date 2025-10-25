@@ -30,11 +30,10 @@ vector<int> dijkstra(int V, vector<vector<int>> &edges, int src){
 
     // Create a priority queue to store vertices that
     // are being preprocessed.
-    priority_queue<vector<int>, vector<vector<int>>, 
+    priority_queue<vector<int>, vector<vector<int>>,
                    greater<vector<int>>> pq;
 
-    // Create a vector for distances and initialize all
-    // distances as infinite
+    
     vector<int> dist(V, INT_MAX);
 
     // Insert source itself in priority queue and initialize
@@ -54,12 +53,11 @@ vector<int> dijkstra(int V, vector<vector<int>> &edges, int src){
         // Get all adjacent of u.
         for (auto x : adj[u]){
             
-            // Get vertex label and weight of current
-            // adjacent of u.
+            
             int v = x[0];
             int weight = x[1];
 
-            // If there is shorter path to v through u.
+            
             if (dist[v] > dist[u] + weight)
             {
                 // Updating distance of v
@@ -72,12 +70,12 @@ vector<int> dijkstra(int V, vector<vector<int>> &edges, int src){
     return dist;
 }
 
-// Driver program to test methods of graph class
-int main(){
+
+int main() {
     int V = 5;
     int src = 0;
 
-    // edge list format: {u, v, weight}
+    
     vector<vector<int>> edges = {{0, 1, 4}, {0, 2, 8}, {1, 4, 6}, 
                                  {2, 3, 2}, {3, 4, 10}};
 
@@ -86,6 +84,7 @@ int main(){
     // Print shortest distances in one line
     for (int dist : result)
         cout << dist << " ";
+    cout << endl;
  
     return 0;
 }

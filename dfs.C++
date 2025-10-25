@@ -9,10 +9,10 @@ void addEdge(vector<vector<int>> &adj, int s, int t)
     adj[t].push_back(s);
 }
 
-// Recursive function for DFS traversal
+
 void dfsRec(vector<vector<int>> &adj, vector<bool> &visited, int s, vector<int> &res)
 {
-    // Mark the current vertex as visited
+    
     visited[s] = true;
 
     res.push_back(s);
@@ -32,8 +32,7 @@ vector<int> DFS(vector<vector<int>> &adj)
     {
         if (visited[i] == false)
         {
-            // If vertex i has not been visited,
-            // perform DFS from it
+           
             dfsRec(adj, visited, i, res);
         }
     }
@@ -47,7 +46,7 @@ int main()
     
     vector<vector<int>> adj(V);
 
-    // Define the edges of the graph
+    
     vector<vector<int>> edges = {{1, 2}, {2, 0}, {0, 3}, {4, 5}};
 
    
